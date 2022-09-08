@@ -3,6 +3,7 @@ import { Component } from "react"
 import Statisticks from "components/Statisticks"
 import Notification from "components/Notification"
 import Section from "components/Section"
+import PropTypes from "prop-types"
 
 
 export class App extends Component {
@@ -25,7 +26,6 @@ export class App extends Component {
   countPositiveFeedbackPercentage = () => {
     let totalValue = this.state.good + this.state.neutral + this.state.bad
     let totalPercent = ((this.state.good/totalValue) * 100)
-    console.log(totalPercent)
     return totalPercent.toFixed(1)
   }
   
@@ -38,6 +38,7 @@ export class App extends Component {
       style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -62,3 +63,10 @@ export class App extends Component {
     )
   };
 };
+ App.propTypes ={
+   state: PropTypes.shape({
+     good: PropTypes.number,
+     neutral: PropTypes.number,
+     bad: PropTypes.number
+   })
+ }

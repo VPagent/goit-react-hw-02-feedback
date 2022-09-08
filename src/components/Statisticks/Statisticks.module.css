@@ -1,0 +1,11 @@
+
+
+.statList{
+    list-style: none;
+    width: 500px;
+    background-color: grey;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 25px;
+}
